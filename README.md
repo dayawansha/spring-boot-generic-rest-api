@@ -32,6 +32,7 @@ Then change it to "hibernate.ddl-auto: update" and run the project.
 
 
 Example:
+
 we are going to add data to the AGENT table.
 It has some foreign keys. first of all, you have to add the foreign key-related data to the tables.
 
