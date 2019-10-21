@@ -31,14 +31,15 @@ just change the "hibernate.ddl-auto: create" and run the project. schema will cr
 Then change it to "hibernate.ddl-auto: update" and run the project.
 
 ## Example:
-Our target is adding data to the AGENT table.
+Our target is Create, read, update and delete (CRUD operations) data to the AGENT table.
 It have some foreign keys. first of all, you have to add the foreign key-related data to the tables.
 
 Then we have to add data to CUSTOMER and DEPARTMENT:
-use the same endpoints to add the data for these two tables. you can use the endpoints like theis.
+Now you can use the same endpoints like theis to add the data for these two tables.
+
+### POST mapping for data adding.
 
 adding data the CUSTOMER table:
-(post request)
 http://localhost:8080/commonEntities
 ```
 {
