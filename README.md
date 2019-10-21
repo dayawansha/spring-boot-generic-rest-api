@@ -1,6 +1,4 @@
-# spring-generic-rest-repository
-spring generic rest repository 
-
+# spring Generic Rest API
 These APIs have designed to reduce the unnecessary rest API endpoints.
 
 when you are working with microservice architecture,
