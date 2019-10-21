@@ -19,9 +19,9 @@ To develop this rest-API, java reflection has been  used.
 However, Spring has given some advances features with https://spring.io/projects/spring-data-rest. probably you should read this.
 Also, This reference will useful. https://github.com/fsonmezay/generic-rest-api
 
-## How to Use,
+## How to Use (if you know this, please skip),
 
-Just clone. (if you know this, please skip)
+Just clone.
 You should install PostgreSQL in your machine. (otherwise, you have to change application.yml according to the database)
 
 after cloning the project, add the maven dependencies and use the PostgreSQL default database, schema otherwise you have to create a new database and new schema and change the application.yml according to the new credentials. 
