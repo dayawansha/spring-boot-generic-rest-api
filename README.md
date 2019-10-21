@@ -62,6 +62,18 @@ http://localhost:8080/commonEntities
 }
 ```
 
+Output
+```
+{
+    "message": "Common Object Added Successfully",
+    "status": true,
+    "statusCode": 200,
+    "user": "",
+    "timestamp": "2019-10-21T14:26:13.618+0000",
+    "id": ""
+}
+```
+
 adding data the DEPARTMENT table: (post request) http://localhost:8080/commonEntities
 
 ```
@@ -84,6 +96,18 @@ adding data the DEPARTMENT table: (post request) http://localhost:8080/commonEnt
 	]
 }
 ```
+Output
+```
+{
+    "message": "Common Object Added Successfully",
+    "status": true,
+    "statusCode": 200,
+    "user": "",
+    "timestamp": "2019-10-21T14:26:13.618+0000",
+    "id": ""
+}
+```
+
 
 
 
