@@ -205,6 +205,36 @@ If other tables are using records that you are trying to delete, you are unable 
 Agent:- Entity Name
 1:- Agnet Id
 
+```
+{
+	"className":"Customer",
+	"entityCategoryList":
+	[
+		{
+			"customerId":4
+		
+		},
+		{
+			"customerId":5
+		}
+		
+	]
+}
+```
+
+Output
+
+```
+{
+    "message": "Common Object Deleted Successfully",
+    "status": true,
+    "statusCode": 200,
+    "user": "",
+    "timestamp": "2019-10-21T17:01:27.163+0000",
+    "id": ""
+}
+```
+
 
 
 
