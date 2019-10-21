@@ -40,16 +40,16 @@ public class ReferenceModelServiceImpl {
         return entityObject;
     }
 
-    @Transactional
-    public Object getEntityCategoryList(String tableName) {
-
-        try {
-            Class<?> cls = Class.forName("com.iil.ibu.life.admin.repository.model.model." + tableName);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return "testing";
-    }
+//    @Transactional
+//    public Object getEntityCategoryList(String tableName) {
+//
+//        try {
+//            Class<?> cls = Class.forName("com.iil.ibu.life.admin.repository.model.model." + tableName);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return "testing";
+//    }
 
     @Transactional
     public CommonResponse addEntityCategory(EntityCategoryData entityCategoryData) throws ClassNotFoundException, IllegalAccessException, InstantiationException, InvocationTargetException {

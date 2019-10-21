@@ -25,24 +25,22 @@ public class ReferenceModelController {
     ReferenceModelServiceImpl referenceModelService;
 
     @GetMapping("/{tableName}/{id}")
-//    public <T> T getObject(@PathVariable("tableName") String tableName, @PathVariable("id") Integer id) throws ClassNotFoundException {
     public <T> ResponseEntity<T> getObject(@PathVariable("tableName") String tableName, @PathVariable("id") Integer id) throws ClassNotFoundException {
-        T commonResponse = referenceModelService.getEntityCategory(tableName, id);
+        T entityObject = referenceModelService.getEntityCategory(tableName, id);
 
-        if (commonResponse != null) {
-            return new ResponseEntity<>(commonResponse, HttpStatus.FOUND);
+        if (entityObject != null) {
+            return new ResponseEntity<>(entityObject, HttpStatus.FOUND);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
-    @GetMapping("/{tableName}")
-    public Object getAll(@PathVariable("tableName") String tableName) {
-        Object commonResponse = referenceModelService.getEntityCategoryList(tableName);
-        return commonResponse;
-    }
+//    @GetMapping("/{tableName}")
+//    public Object getAll(@PathVariable("tableName") String tableName) {
+//        Object commonResponse = referenceModelService.getEntityCategoryList(tableName);
+//        return commonResponse;
+//    }
 
-    @CrossOrigin
     @PostMapping
     public ResponseEntity<CommonResponse> postEntityCategory(@RequestBody EntityCategoryData entityCategoryData) throws ClassNotFoundException, IllegalAccessException, InvocationTargetException, InstantiationException {
         CommonResponse commonResponse = referenceModelService.addEntityCategory(entityCategoryData);
@@ -60,18 +58,6 @@ public class ReferenceModelController {
         CommonResponse commonResponse = referenceModelService.deleteEntityCategory(entityCategoryData);
         return new ResponseEntity<>(commonResponse, HttpStatus.valueOf(commonResponse.getStatusCode()));
     }
-
-
-//    @DeleteMapping("/{tableName}/{id}")
-//    public <T> ResponseEntity<T> deleteEntityCategory(@PathVariable("tableName") String tableName, @PathVariable("id") Integer id) throws ClassNotFoundException {
-//        T  commonResponse = referenceModelService.deleteEntityCategory(tableName,id);
-//
-//        if (commonResponse != null) {
-//            return new ResponseEntity<>(commonResponse, HttpStatus.FOUND);
-//        } else {
-//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-//        }
-//    }
 
 
 }
