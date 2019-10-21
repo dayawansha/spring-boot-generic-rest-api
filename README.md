@@ -193,13 +193,13 @@ Output
 }
 ```
 ### GET mapping for data selecting.
-(PUT request) http://localhost:8080/commonEntities/Agent/1
+(GET request) http://localhost:8080/commonEntities/Agent/1
 Agent:- Entity Name
 1:- Agnet Id
 
 ### DELETE mapping for data deleting.
-Import: When you are deleting a record list, Those values should not use other tables.
-If other tables are using records that you are trying to delete, you are unable to delete.
+Import: When you are deleting a record list, Those values should not use from other tables.
+If other tables are using records that you are trying to delete, you are unable to delete. (will give a violates foreign key constraint issue)
 
 (DELETE request) http://localhost:8080/commonEntities/Agent/1
 Agent:- Entity Name
