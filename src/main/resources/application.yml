@@ -1,10 +1,10 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/GENERIC
-    username: crud
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
     password: admin
   jpa:
-    hibernate.ddl-auto: create-drop
+    hibernate.ddl-auto: create
     generate-ddl: false
     show-sql: true
     properties:
@@ -12,6 +12,8 @@ spring:
         jdbc:
           lob:
           non_contextual_creation: true
-          temp.use_jdbc_metadata_defaults: false
+        temp.use_jdbc_metadata_defaults: false
+
+#          spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults = false
 server:
   port: 8082

@@ -23,5 +23,8 @@ public class Profile implements Serializable{
     @SequenceGenerator(sequenceName = "profile_seq", allocationSize = 1, name = "PROFILE")
     @Column(length = 5, name = "PROFILE_ID", nullable = false)
     private Integer profileId;
+
+    @Column(length = 5, name = "STATUS", nullable = false)
+    private Integer status;
 }
 

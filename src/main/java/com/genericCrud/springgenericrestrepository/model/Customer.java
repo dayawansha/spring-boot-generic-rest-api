@@ -15,22 +15,20 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "DEPARTMENT")
+@Table(name = "CUSTOMER")
 @DynamicUpdate
-public class Department implements Serializable{
-
+public class Customer implements Serializable{
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "DEPARTMENT")
-    @SequenceGenerator(sequenceName = "department_seq", allocationSize = 1, name = "DEPARTMENT")
-    @Column(length = 5, name = "DEPARTMENT_ID", nullable = false)
-    private Integer departmentId;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CUSTOMER")
+    @SequenceGenerator(sequenceName = "customer_seq", allocationSize = 1, name = "CUSTOMER")
+    @Column(length = 5, name = "CUSTOMER_ID", nullable = false)
+    private Integer roleId;
 
-    @Column(length = 5, name = "DEPARTMENT_NAME", nullable = false)
-    private Integer departmentName;
+    @Column(length = 5, name = "CUSTOMER_Name", nullable = false)
+    private String name;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "department", fetch = FetchType.LAZY)
     private Set<Employee> employeeSet;
-
 
 }
