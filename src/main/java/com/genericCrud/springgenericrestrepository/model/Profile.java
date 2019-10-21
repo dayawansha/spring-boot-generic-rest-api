@@ -20,10 +20,8 @@ public class Profile  implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PROFILE")
     @SequenceGenerator(sequenceName = "profile_seq", allocationSize = 1, name = "PROFILE")
-    @Column(length = 14, name = "PROFILE_ID", nullable = false)
+    @Column(length = 10, name = "PROFILE_ID", nullable = false)
     private Integer profileId;
-
-
 
 
 }

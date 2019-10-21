@@ -21,7 +21,7 @@ public class Bonus implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "BONUS")
     @SequenceGenerator(sequenceName = "profile_seq", allocationSize = 1, name = "BONUS")
-    @Column(length = 5, name = "BONUS_ID", nullable = false)
+    @Column(length = 10, name = "BONUS_ID", nullable = false)
     private Integer bonusId;
 
     @Column(length = 100, name = "STATUS", nullable = false)

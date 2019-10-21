@@ -26,7 +26,7 @@ public class Department implements Serializable{
     @Column(length = 5, name = "DEPARTMENT_ID", nullable = false)
     private Integer departmentId;
 
-    @Column(length = 5, name = "DEPARTMENT_NAME", nullable = false)
+    @Column(length = 50, name = "DEPARTMENT_NAME", nullable = false)
     private Integer departmentName;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "department", fetch = FetchType.LAZY)

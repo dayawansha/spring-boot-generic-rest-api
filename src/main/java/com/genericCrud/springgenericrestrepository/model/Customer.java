@@ -22,10 +22,10 @@ public class Customer implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CUSTOMER")
     @SequenceGenerator(sequenceName = "customer_seq", allocationSize = 1, name = "CUSTOMER")
-    @Column(length = 5, name = "CUSTOMER_ID", nullable = false)
+    @Column(length = 10, name = "CUSTOMER_ID", nullable = false)
     private Integer roleId;
 
-    @Column(length = 5, name = "CUSTOMER_Name", nullable = false)
+    @Column(length = 100, name = "CUSTOMER_Name", nullable = false)
     private String name;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "department", fetch = FetchType.LAZY)
