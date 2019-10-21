@@ -25,10 +25,13 @@ public class Customer implements Serializable{
     @Column(length = 10, name = "CUSTOMER_ID", nullable = false)
     private Integer customerId;
 
-    @Column(length = 100, name = "CUSTOMER_Name", nullable = false)
+    @Column(length = 100, name = "CUSTOMER_NAME", nullable = false)
     private String name;
 
+    @Column(length = 100, name = "ADDRESS", nullable = false)
+    private String address;
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "department", fetch = FetchType.LAZY)
-    private Set<Employee> employeeSet;
+    private Set<Agent> agentSet;
 
 }

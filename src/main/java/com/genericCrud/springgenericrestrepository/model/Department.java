@@ -27,10 +27,13 @@ public class Department implements Serializable{
     private Integer departmentId;
 
     @Column(length = 50, name = "DEPARTMENT_NAME", nullable = false)
-    private String departmentName;
+    private String name;
+
+    @Column(length = 100, name = "ADDRESS", nullable = false)
+    private String address;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "department", fetch = FetchType.LAZY)
-    private Set<Employee> employeeSet;
+    private Set<Agent> agentSet;
 
 
 }

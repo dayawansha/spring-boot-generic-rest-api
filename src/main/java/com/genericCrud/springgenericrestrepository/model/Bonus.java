@@ -27,8 +27,8 @@ public class Bonus implements Serializable{
     @Column(length = 100, name = "STATUS", nullable = false)
     private String name;
 
-    @JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "EMPLOYEE_ID")
+    @JoinColumn(name = "AGENT_ID", referencedColumnName = "AGENT_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private Employee employee;
+    private Agent agent;
 
 }
