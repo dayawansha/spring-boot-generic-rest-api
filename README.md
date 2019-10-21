@@ -30,8 +30,7 @@ You can create the schema, in application.yml,
 just change the "hibernate.ddl-auto: create" and run the project. schema will create.
 Then change it to "hibernate.ddl-auto: update" and run the project.
 
-
-Example:
+##Example:
 we are going to add data to the AGENT table.
 It has some foreign keys. first of all, you have to add the foreign key-related data to the tables.
 
