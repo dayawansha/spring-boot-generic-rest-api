@@ -13,7 +13,7 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "EMPLOYEE")
+@Table(name = "PROFILE")
 @DynamicUpdate
 public class Profile  implements Serializable{
     private static final long serialVersionUID = 1L;

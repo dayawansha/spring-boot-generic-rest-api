@@ -23,7 +23,7 @@ public class Customer implements Serializable{
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CUSTOMER")
     @SequenceGenerator(sequenceName = "customer_seq", allocationSize = 1, name = "CUSTOMER")
     @Column(length = 10, name = "CUSTOMER_ID", nullable = false)
-    private Integer roleId;
+    private Integer customerId;
 
     @Column(length = 100, name = "CUSTOMER_Name", nullable = false)
     private String name;
