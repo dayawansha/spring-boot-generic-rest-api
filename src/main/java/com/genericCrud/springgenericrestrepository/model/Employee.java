@@ -7,6 +7,7 @@ import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -34,6 +35,8 @@ public class Employee implements Serializable{
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Department department;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "employee", fetch = FetchType.LAZY)
+    private Set<Bonus> bonusSet;
 
 }
 

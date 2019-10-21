@@ -16,7 +16,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Table(name = "PROFILE")
 @DynamicUpdate
-public class Profile implements Serializable{
+public class Bonus implements Serializable{
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PROFILE")
@@ -26,5 +26,9 @@ public class Profile implements Serializable{
 
     @Column(length = 5, name = "STATUS", nullable = false)
     private Integer status;
-}
 
+    @JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "EMPLOYEE_ID")
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    private Employee employee;
+
+}
