@@ -36,6 +36,12 @@ It have some foreign keys. first of all, you have to add the foreign key-related
 
 Then we have to add data to CUSTOMER and DEPARTMENT:
 
+use the same endpoints to add the data for these two tables. you can use the endpoints like the.
+
+adding data the CUSTOMER table
+
+
+
 
 
 
