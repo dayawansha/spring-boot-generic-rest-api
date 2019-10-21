@@ -18,5 +18,5 @@ To develop this rest-API, java reflection has been  used.
 
 However, Spring has given some advances features with https://spring.io/projects/spring-data-rest. probably you should read this.
 
-Also, this reference will useful. https://github.com/fsonmezay/generic-rest-api
+Also, This reference will useful. https://github.com/fsonmezay/generic-rest-api
 
