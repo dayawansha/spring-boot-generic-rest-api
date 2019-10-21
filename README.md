@@ -46,18 +46,41 @@ http://localhost:8080/commonEntities
 	"entityCategoryList":
 	[
 		{
-			"name":"customer 1",
+		"name":"customer 1",
     		"address": "address 1"
 		},
-			{
-			"name":"customer 2",
+		{
+		"name":"customer 2",
     		"address": "address 2"
 		},
-			{
-			"name":"customer 3",
+		{
+		"name":"customer 3",
     		"address": "address 3"
 		}
 		
+	]
+}
+```
+
+adding data the DEPARTMENT table: (post request) http://localhost:8080/commonEntities
+
+```
+{
+	"className":"Department",
+	"entityCategoryList":
+	[
+		{
+		"name":"Department 1",
+    		"address": "address 1"
+		},
+		{
+		"name":"Department 2",
+    		"address": "address 2"
+		},
+		{
+		"name":"Department 3",
+    		"address": "address 3"
+		}	
 	]
 }
 ```
