@@ -18,7 +18,7 @@ import java.lang.reflect.InvocationTargetException;
  */
 @CrossOrigin
 @RestController
-@RequestMapping("/commonObjects")
+@RequestMapping("/commonEntities")
 public class ReferenceModelController {
 
     @Autowired
@@ -58,6 +58,4 @@ public class ReferenceModelController {
         CommonResponse commonResponse = referenceModelService.deleteEntityCategory(entityCategoryData);
         return new ResponseEntity<>(commonResponse, HttpStatus.valueOf(commonResponse.getStatusCode()));
     }
-
-
 }

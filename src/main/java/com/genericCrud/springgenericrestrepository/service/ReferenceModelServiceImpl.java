@@ -83,7 +83,7 @@ public class ReferenceModelServiceImpl {
 
     private ArrayList getEntity(EntityCategoryData entityCategoryData) throws ClassNotFoundException, IllegalAccessException, InstantiationException, InvocationTargetException {
 
-        Class<?> cls = Class.forName("com.iil.ibu.life.admin.repository.model." + entityCategoryData.getClassName());
+        Class<?> cls = Class.forName("com.genericCrud.springgenericrestrepository.model." + entityCategoryData.getClassName());
 
         ArrayList<HashMap<String, Object>> hashMapArrayList = entityCategoryData.getEntityCategoryList();
         ArrayList clsArrayList = new ArrayList();
@@ -145,7 +145,7 @@ public class ReferenceModelServiceImpl {
     // because "getEntity" method have heavy time complexity.
     private ArrayList getEntityBasic(EntityCategoryData entityCategoryData) throws ClassNotFoundException, IllegalAccessException, InstantiationException, InvocationTargetException {
 
-        Class<?> cls = Class.forName("com.iil.ibu.life.admin.repository.model." + entityCategoryData.getClassName());
+        Class<?> cls = Class.forName("com.genericCrud.springgenericrestrepository.model." + entityCategoryData.getClassName());
 
         ArrayList<HashMap<String, Object>> hashMapArrayList = entityCategoryData.getEntityCategoryList();
         ArrayList clsArrayList = new ArrayList();
