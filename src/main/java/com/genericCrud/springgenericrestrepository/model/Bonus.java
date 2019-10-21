@@ -19,13 +19,13 @@ import java.io.Serializable;
 public class Bonus implements Serializable{
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PROFILE")
-    @SequenceGenerator(sequenceName = "profile_seq", allocationSize = 1, name = "PROFILE")
-    @Column(length = 5, name = "PROFILE_ID", nullable = false)
-    private Integer profileId;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "BONUS")
+    @SequenceGenerator(sequenceName = "profile_seq", allocationSize = 1, name = "BONUS")
+    @Column(length = 5, name = "BONUS_ID", nullable = false)
+    private Integer bonusId;
 
-    @Column(length = 5, name = "STATUS", nullable = false)
-    private Integer status;
+    @Column(length = 100, name = "STATUS", nullable = false)
+    private String name;
 
     @JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "EMPLOYEE_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)

@@ -22,10 +22,10 @@ public class Employee implements Serializable{
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "EMPLOYEE")
     @SequenceGenerator(sequenceName = "employee_seq", allocationSize = 1, name = "EMPLOYEE")
     @Column(length = 14, name = "EMPLOYEE_ID", nullable = false)
-    private Long profileId;
+    private Integer employeeId;
 
-    @Column(length = 5, name = "STATUS", nullable = false)
-    private String status;
+    @Column(length = 100, name = "STATUS", nullable = false)
+    private String name;
 
     @JoinColumn(name = "CUSTOMER_ID", referencedColumnName = "CUSTOMER_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
