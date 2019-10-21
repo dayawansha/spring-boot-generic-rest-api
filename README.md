@@ -55,6 +55,14 @@ http://localhost:8080/commonEntities
 		{
 		"name":"customer 3",
     		"address": "address 3"
+		},
+		{
+		"name":"customer 4",
+    		"address": "address 4"
+		},
+		{
+		"name":"customer 5",
+    		"address": "address 5"
 		}
 		
 	]
@@ -184,6 +192,19 @@ Output
     "id": ""
 }
 ```
+### GET mapping for data selecting.
+(PUT request) http://localhost:8080/commonEntities/Agent/1
+Agent:- Entity Name
+1:- Agnet Id
+
+### DELETE mapping for data deleting.
+Import: When you are deleting a record list, Those values should not use other tables.
+If other tables are using records that you are trying to delete, you are unable to delete.
+
+(DELETE request) http://localhost:8080/commonEntities/Agent/1
+Agent:- Entity Name
+1:- Agnet Id
+
 
 
 
