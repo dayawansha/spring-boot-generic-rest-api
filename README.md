@@ -35,10 +35,34 @@ Our target is adding data to the AGENT table.
 It have some foreign keys. first of all, you have to add the foreign key-related data to the tables.
 
 Then we have to add data to CUSTOMER and DEPARTMENT:
+use the same endpoints to add the data for these two tables. you can use the endpoints like theis.
 
-use the same endpoints to add the data for these two tables. you can use the endpoints like the.
+adding data the CUSTOMER table:
+(post request)
+http://localhost:8080/commonEntities
 
-adding data the CUSTOMER table
+{
+	"className":"Customer",
+	"entityCategoryList":
+	[
+		{
+			"name":"customer 1",
+    		"address": "address 1"
+		},
+			{
+			"name":"customer 2",
+    		"address": "address 2"
+		},
+			{
+			"name":"customer 3",
+    		"address": "address 3"
+		}
+		
+	]
+}
+
+
+
 
 
 
