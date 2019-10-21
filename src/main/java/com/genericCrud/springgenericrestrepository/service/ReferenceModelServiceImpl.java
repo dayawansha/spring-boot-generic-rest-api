@@ -36,7 +36,7 @@ public class ReferenceModelServiceImpl {
 
     @Transactional
     public <T> T getEntityCategory(String tableName, Integer primaryKey) throws ClassNotFoundException {
-        Class<?> cls = Class.forName("com.iil.ibu.life.admin.repository.model." + tableName);
+        Class<?> cls = Class.forName("com.genericCrud.springgenericrestrepository.model." + tableName);
         T entityObject = (T) commonRepository.select(cls, primaryKey);
         return entityObject;
     }
