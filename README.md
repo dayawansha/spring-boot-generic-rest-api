@@ -108,7 +108,42 @@ Output
 }
 ```
 
-
+Now you can add data to the AGENT table like this. (post request) http://localhost:8080/commonEntities
+```
+{
+	"className":"Agent",
+	"entityCategoryList":
+	[
+		{
+			"name":"Agent 1",
+			"customer":1,
+			"department":1
+		},
+			{
+			"name":"Agent 2",
+			"customer":2,
+			"department":2
+		},
+			{
+			"name":"Agent 3",
+			"customer":3,
+			"department":3
+		}
+		
+	]
+}
+```
+Output
+```
+{
+    "message": "Common Object Added Successfully",
+    "status": true,
+    "statusCode": 200,
+    "user": "",
+    "timestamp": "2019-10-21T14:26:13.618+0000",
+    "id": ""
+}
+```
 
 
 
