@@ -31,8 +31,11 @@ just change the "hibernate.ddl-auto: create" and run the project. schema will cr
 Then change it to "hibernate.ddl-auto: update" and run the project.
 
 ## Example:
-we are going to add data to the AGENT table.
-It has some foreign keys. first of all, you have to add the foreign key-related data to the tables.
+Our target is adding data to the AGENT table.
+It have some foreign keys. first of all, you have to add the foreign key-related data to the tables.
+
+Then we have to add data to CUSTOMER and DEPARTMENT:
+
 
 
 
