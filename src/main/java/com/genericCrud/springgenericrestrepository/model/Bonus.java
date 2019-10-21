@@ -14,7 +14,7 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "PROFILE")
+@Table(name = "BONUS")
 @DynamicUpdate
 public class Bonus implements Serializable{
     private static final long serialVersionUID = 1L;
@@ -24,7 +24,7 @@ public class Bonus implements Serializable{
     @Column(length = 10, name = "BONUS_ID", nullable = false)
     private Integer bonusId;
 
-    @Column(length = 100, name = "STATUS", nullable = false)
+    @Column(length = 100, name = "NAME", nullable = false)
     private String name;
 
     @JoinColumn(name = "AGENT_ID", referencedColumnName = "AGENT_ID")

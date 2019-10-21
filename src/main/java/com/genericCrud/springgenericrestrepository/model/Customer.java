@@ -25,7 +25,7 @@ public class Customer implements Serializable{
     @Column(length = 10, name = "CUSTOMER_ID", nullable = false)
     private Integer customerId;
 
-    @Column(length = 100, name = "CUSTOMER_NAME", nullable = false)
+    @Column(length = 100, name = "NAME", nullable = false)
     private String name;
 
     @Column(length = 100, name = "ADDRESS", nullable = false)

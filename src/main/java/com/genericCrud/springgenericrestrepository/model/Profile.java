@@ -23,5 +23,8 @@ public class Profile  implements Serializable{
     @Column(length = 10, name = "PROFILE_ID", nullable = false)
     private Integer profileId;
 
+    @Column(length = 100, name = "STATUS", nullable = false)
+    private Integer status;
+
 
 }
