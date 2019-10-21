@@ -146,6 +146,47 @@ Output
 }
 ```
 
+### PUT mapping for data update.
+(PUT request) http://localhost:8080/commonEntities
+```
+{
+	"className":"Agent",
+	"entityCategoryList":
+	[
+		{
+			"agentId":1,
+			"name":"Agent 11",
+			"customer":1,
+			"department":1
+		},
+			{
+			"agentId":2,	
+			"name":"Agent 22",
+			"customer":1,
+			"department":1
+		},
+			{
+			"agentId":3,
+			"name":"Agent 33",
+			"customer":3,
+			"department":3
+		}
+		
+	]
+}
+```
+Output
+```
+{
+    "message": "Common Object Updated Successfully",
+    "status": true,
+    "statusCode": 200,
+    "user": "",
+    "timestamp": "2019-10-21T16:37:48.292+0000",
+    "id": ""
+}
+```
+
 
 
 
