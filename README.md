@@ -40,7 +40,7 @@ use the same endpoints to add the data for these two tables. you can use the end
 adding data the CUSTOMER table:
 (post request)
 http://localhost:8080/commonEntities
-
+```
 {
 	"className":"Customer",
 	"entityCategoryList":
@@ -60,7 +60,7 @@ http://localhost:8080/commonEntities
 		
 	]
 }
-
+```
 
 
 
