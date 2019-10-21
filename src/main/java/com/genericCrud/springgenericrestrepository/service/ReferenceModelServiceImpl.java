@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.transaction.Transactional;
 import java.lang.reflect.Field;
@@ -89,7 +90,7 @@ public class ReferenceModelServiceImpl {
         ArrayList clsArrayList = new ArrayList();
         Method[] methods = cls.getDeclaredMethods();
 
-        Field[] primaryClassFields = cls.getDeclaredFields();
+//        Field[] primaryClassFields = cls.getDeclaredFields();
 
         for (HashMap<String, Object> hashMap : hashMapArrayList) {
             Object clsInstance = cls.newInstance();
@@ -97,13 +98,16 @@ public class ReferenceModelServiceImpl {
                 String entryFields = objectHashMap.getKey();
                 Object entryFieldsValue = objectHashMap.getValue();
 
-                for (Field f : primaryClassFields) {
-                    if (f.isAnnotationPresent(GeneratedValue.class)) {
-                        f.setAccessible(true);
-                        f.set(clsInstance, hashMap.get("Id"));
-                        break;
-                    }
-                }
+     /*if you wont, you can send request with  primary key name as "Id", Then backend will automatically set it to primary key,
+     other wise you have to sent the exact field name of primary key.
+     Now i am sending exact primary key field name. so I have commented the it's related code*/
+//                for (Field f : primaryClassFields) {
+//                    if (f.isAnnotationPresent(Id.class)) {
+//                        f.setAccessible(true);
+//                        f.set(clsInstance, hashMap.get("Id"));
+//                        break;
+//                    }
+//                }
                 for (Method m : methods) {
                     if (m.getName().toLowerCase().endsWith("set" + entryFields.toLowerCase())) {
                         Object don = manyToOneObject(cls, entryFieldsValue, entryFields);
@@ -116,7 +120,7 @@ public class ReferenceModelServiceImpl {
         return clsArrayList;
     }
 
-    ////////this method returns the forign key objects with thir id
+    ////////this method returns the foreign key objects with there id
     private Object manyToOneObject(Class<?> rootObject, Object entryFieldsValue, String entryFieldsName) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
         Object secondoryObject = new Object();
         Field[] fields = rootObject.getDeclaredFields();
@@ -126,7 +130,7 @@ public class ReferenceModelServiceImpl {
                 secondoryObject = rootObject.newInstance();
                 Field[] fields2 = rootObject.getDeclaredFields();
                 for (Field f2 : fields2) {
-                    if (f2.isAnnotationPresent(GeneratedValue.class)) {
+                    if (f2.isAnnotationPresent(Id.class)) {
                         f.setAccessible(true);
                         f2.setAccessible(true);
                         f2.set(secondoryObject, entryFieldsValue);
@@ -141,7 +145,7 @@ public class ReferenceModelServiceImpl {
     }
 
 
-    //if one day wont to add values with out considering foreign key values, this method should use instated of getEntity
+    //if some one want to add values without considering foreign key values, this method should use instated of getEntity
     // because "getEntity" method have heavy time complexity.
     private ArrayList getEntityBasic(EntityCategoryData entityCategoryData) throws ClassNotFoundException, IllegalAccessException, InstantiationException, InvocationTargetException {
 
