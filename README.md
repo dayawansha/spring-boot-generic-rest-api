@@ -56,6 +56,7 @@ Above java DTO will use in Rest-client like this,
 
 adding data the CUSTOMER table:
 http://localhost:8080/commonEntities
+In Creat, you dont need primary key for each object.
 ```
 {
 	"className":"Customer",
@@ -171,6 +172,7 @@ Output
 
 ### PUT mapping for data update.
 (PUT request) http://localhost:8080/commonEntities
+In update, you need primary key for each object.
 ```
 {
 	"className":"Agent",
