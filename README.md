@@ -42,7 +42,7 @@ http://localhost:8080/commonEntities
 ```
 {
 	"className":"Customer",
-	"entityCategoryList":
+	"entityObjectList":
 	[
 		{
 		"name":"customer 1",
@@ -86,7 +86,7 @@ adding data the DEPARTMENT table: (post request) http://localhost:8080/commonEnt
 ```
 {
 	"className":"Department",
-	"entityCategoryList":
+	"entityObjectList":
 	[
 		{
 		"name":"Department 1",
@@ -119,7 +119,7 @@ Now you can add data to the AGENT table like this. (post request) http://localho
 ```
 {
 	"className":"Agent",
-	"entityCategoryList":
+	"entityObjectList":
 	[
 		{
 			"name":"Agent 1",
@@ -157,7 +157,7 @@ Output
 ```
 {
 	"className":"Agent",
-	"entityCategoryList":
+	"entityObjectList":
 	[
 		{
 			"agentId":1,
@@ -208,7 +208,7 @@ Agent:- Entity Name
 ```
 {
 	"className":"Customer",
-	"entityCategoryList":
+	"entityObjectList":
 	[
 		{
 			"customerId":4
