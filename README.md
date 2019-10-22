@@ -1,8 +1,8 @@
 # spring Generic Rest API
-These APIs have designed to reduce the unnecessary rest API endpoints.
+These APIs have designed to reduce the unnecessary rest API endpoints in your poroject.
 
 when you are working with microservice architecture,
-Some times you met small tables. (someone defined as a reference table) 
+Some times you met small tables. (someone defined as a reference table..etc) 
 These tables don't have heavy relationships with other tables.
 
  However, according to the Spring-Rest-API framework for each entity (Table) you have to write multiple Rest-API endpoints (for CRUD operations).
@@ -13,9 +13,6 @@ However, It has some technical limitations.
 Basically, you should send the "exact Entity name and their exact field names as key and value pairs". (contained some examples)
 
 To develop this rest-API, java reflection has been  used.
-
-However, Spring has given some advances features with https://spring.io/projects/spring-data-rest. probably you should read this.
-Also, This reference will useful. https://github.com/fsonmezay/generic-rest-api
 
 ## How to Use (if you know this, please skip),
 
@@ -35,6 +32,22 @@ It have some foreign keys. first of all, you have to add the foreign key-related
 Then we have to add data to CUSTOMER and DEPARTMENT:
 Now you can use the same endpoints like theis to add the data for these two tables.
 
+common request body for All  post, put and delete requests,
+
+```java
+public class EntityObjectData {
+    String className;
+    ArrayList<HashMap<String,Object>> entityObjectList;
+}
+````
+It will use in rest client like this,
+```
+{
+	"className":"Customer",
+	"entityObjectList":[]
+
+}
+```
 ### POST mapping for data adding.
 
 adding data the CUSTOMER table:
@@ -42,7 +55,7 @@ http://localhost:8080/commonEntities
 ```
 {
 	"className":"Customer",
-	"entityCategoryList":
+	"entityObjectList":
 	[
 		{
 		"name":"customer 1",
@@ -86,7 +99,7 @@ adding data the DEPARTMENT table: (post request) http://localhost:8080/commonEnt
 ```
 {
 	"className":"Department",
-	"entityCategoryList":
+	"entityObjectList":
 	[
 		{
 		"name":"Department 1",
@@ -119,7 +132,7 @@ Now you can add data to the AGENT table like this. (post request) http://localho
 ```
 {
 	"className":"Agent",
-	"entityCategoryList":
+	"entityObjectList":
 	[
 		{
 			"name":"Agent 1",
@@ -157,7 +170,7 @@ Output
 ```
 {
 	"className":"Agent",
-	"entityCategoryList":
+	"entityObjectList":
 	[
 		{
 			"agentId":1,
@@ -208,7 +221,7 @@ Agent:- Entity Name
 ```
 {
 	"className":"Customer",
-	"entityCategoryList":
+	"entityObjectList":
 	[
 		{
 			"customerId":4
@@ -235,7 +248,10 @@ Output
 }
 ```
 
+### Other related methologies,
 
+However, Spring has given some advances features with https://spring.io/projects/spring-data-rest. probably you should read this.
+Also this reference will useful. https://github.com/fsonmezay/generic-rest-api
 
 
 
