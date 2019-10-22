@@ -32,7 +32,7 @@ It have some foreign keys. first of all, you have to add the foreign key-related
 Then we have to add data to CUSTOMER and DEPARTMENT:
 Now you can use the same endpoints like theis to add the data for these two tables.
 
-common request body for All  post, put and delete requests, (This java dto will catch rest cliend request data)
+common request body for All  post, put and delete requests, (This java DTO will catch rest-client request data, this is common dto)
 
 ```java
 public class EntityObjectData {
@@ -40,13 +40,13 @@ public class EntityObjectData {
     ArrayList<HashMap<String,Object>> entityObjectList;
 }
 ````
-Above java DTO will use in rest client like this,
+Above java DTO will use in Rest-client like this,
 ```
 {
 	"className":"Customer",
 	"entityObjectList":
 		[
-		you can add one or more java entity object with their exact key and valus pairs.
+		you can add one or more java entity objects with their exact key and value pairs.
 		]
 
 }
@@ -218,10 +218,8 @@ Agent:- Entity Name
 Import: When you are deleting a record list, Those values should not use from other tables.
 If other tables are using records that you are trying to delete, you are unable to delete. (will give a violates foreign key constraint issue)
 
-(DELETE request) http://localhost:8080/commonEntities/Agent/1
-Agent:- Entity Name
-1:- Agnet Id
-
+(DELETE request) http://localhost:8080/commonEntities
+For delete, you only need primary key of the object.
 ```
 {
 	"className":"Customer",
