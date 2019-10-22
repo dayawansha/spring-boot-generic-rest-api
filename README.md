@@ -32,22 +32,26 @@ It have some foreign keys. first of all, you have to add the foreign key-related
 Then we have to add data to CUSTOMER and DEPARTMENT:
 Now you can use the same endpoints like theis to add the data for these two tables.
 
-common request body for All  post, put and delete requests,
+common request body for All  post, put and delete requests, (This java dto will catch rest cliend request data)
 
-```java
+```
 public class EntityObjectData {
     String className;
     ArrayList<HashMap<String,Object>> entityObjectList;
 }
 ````
-It will use in rest client like this,
+Above java DTO will use in rest client like this,
 ```
 {
 	"className":"Customer",
-	"entityObjectList":[]
+	"entityObjectList":
+		[
+		you can add one or more java entity object with their exact key and valus pairs.
+		]
 
 }
 ```
+
 ### POST mapping for data adding.
 
 adding data the CUSTOMER table:
