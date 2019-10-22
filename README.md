@@ -14,9 +14,6 @@ Basically, you should send the "exact Entity name and their exact field names as
 
 To develop this rest-API, java reflection has been  used.
 
-However, Spring has given some advances features with https://spring.io/projects/spring-data-rest. probably you should read this.
-Also, This reference will useful. https://github.com/fsonmezay/generic-rest-api
-
 ## How to Use (if you know this, please skip),
 
 Just clone.
@@ -235,7 +232,10 @@ Output
 }
 ```
 
+### Other related methologies,
 
+However, Spring has given some advances features with https://spring.io/projects/spring-data-rest. probably you should read this.
+Also this reference will useful. https://github.com/fsonmezay/generic-rest-api
 
 
 
