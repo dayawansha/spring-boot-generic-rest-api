@@ -31,7 +31,7 @@ public class Customer implements Serializable{
     @Column(length = 100, name = "ADDRESS", nullable = false)
     private String address;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "department", fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "department", fetch = FetchType.EAGER)
     private Set<Agent> agentSet;
 
 }

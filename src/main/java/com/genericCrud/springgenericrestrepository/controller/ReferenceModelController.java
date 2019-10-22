@@ -1,6 +1,6 @@
 package com.genericCrud.springgenericrestrepository.controller;
 import com.genericCrud.springgenericrestrepository.dto.CommonResponse;
-import com.genericCrud.springgenericrestrepository.dto.EntityCategoryData;
+import com.genericCrud.springgenericrestrepository.dto.EntityObjectData;
 import com.genericCrud.springgenericrestrepository.service.ReferenceModelServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -42,20 +42,20 @@ public class ReferenceModelController {
 //    }
 
     @PostMapping
-    public ResponseEntity<CommonResponse> postEntityCategory(@RequestBody EntityCategoryData entityCategoryData) throws ClassNotFoundException, IllegalAccessException, InvocationTargetException, InstantiationException {
-        CommonResponse commonResponse = referenceModelService.addEntityCategory(entityCategoryData);
+    public ResponseEntity<CommonResponse> postEntityCategory(@RequestBody EntityObjectData entityObjectData) throws ClassNotFoundException, IllegalAccessException, InvocationTargetException, InstantiationException {
+        CommonResponse commonResponse = referenceModelService.addEntityCategory(entityObjectData);
         return new ResponseEntity<>(commonResponse, HttpStatus.valueOf(commonResponse.getStatusCode()));
     }
 
     @PutMapping
-    public ResponseEntity<CommonResponse> updateEntityCategory(@RequestBody EntityCategoryData entityCategoryData) throws ClassNotFoundException, IllegalAccessException, InvocationTargetException, InstantiationException {
-        CommonResponse commonResponse = referenceModelService.updateEntityCategory(entityCategoryData);
+    public ResponseEntity<CommonResponse> updateEntityCategory(@RequestBody EntityObjectData entityObjectData) throws ClassNotFoundException, IllegalAccessException, InvocationTargetException, InstantiationException {
+        CommonResponse commonResponse = referenceModelService.updateEntityCategory(entityObjectData);
         return new ResponseEntity<>(commonResponse, HttpStatus.valueOf(commonResponse.getStatusCode()));
     }
 
     @DeleteMapping
-    public ResponseEntity<CommonResponse> deleteEntityCategory(@RequestBody EntityCategoryData entityCategoryData) throws ClassNotFoundException, IllegalAccessException, InvocationTargetException, InstantiationException {
-        CommonResponse commonResponse = referenceModelService.deleteEntityCategory(entityCategoryData);
+    public ResponseEntity<CommonResponse> deleteEntityCategory(@RequestBody EntityObjectData entityObjectData) throws ClassNotFoundException, IllegalAccessException, InvocationTargetException, InstantiationException {
+        CommonResponse commonResponse = referenceModelService.deleteEntityCategory(entityObjectData);
         return new ResponseEntity<>(commonResponse, HttpStatus.valueOf(commonResponse.getStatusCode()));
     }
 }

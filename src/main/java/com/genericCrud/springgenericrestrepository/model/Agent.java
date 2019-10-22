@@ -1,4 +1,5 @@
 package com.genericCrud.springgenericrestrepository.model;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,15 +28,17 @@ public class Agent implements Serializable{
     @Column(length = 100, name = "NAME", nullable = false)
     private String name;
 
+//    @JsonIgnore
     @JoinColumn(name = "CUSTOMER_ID", referencedColumnName = "CUSTOMER_ID")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @ManyToOne(optional = false, fetch = FetchType.EAGER)
     private Customer customer;
 
+//    @JsonIgnore
     @JoinColumn(name = "DEPARTMENT_ID", referencedColumnName = "DEPARTMENT_ID")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @ManyToOne(optional = false, fetch = FetchType.EAGER)
     private Department department;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "agent", fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "agent", fetch = FetchType.EAGER)
     private Set<Bonus> bonusSet;
 
 }

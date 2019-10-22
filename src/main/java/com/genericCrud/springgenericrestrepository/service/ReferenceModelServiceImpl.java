@@ -2,13 +2,12 @@ package com.genericCrud.springgenericrestrepository.service;
 
 
 import com.genericCrud.springgenericrestrepository.dto.CommonResponse;
-import com.genericCrud.springgenericrestrepository.dto.EntityCategoryData;
+import com.genericCrud.springgenericrestrepository.dto.EntityObjectData;
 import com.genericCrud.springgenericrestrepository.repository.CommonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.transaction.Transactional;
@@ -53,8 +52,8 @@ public class ReferenceModelServiceImpl {
 //    }
 
     @Transactional
-    public CommonResponse addEntityCategory(EntityCategoryData entityCategoryData) throws ClassNotFoundException, IllegalAccessException, InstantiationException, InvocationTargetException {
-        ArrayList entityArrayList = getEntity(entityCategoryData);
+    public CommonResponse addEntityCategory(EntityObjectData entityObjectData) throws ClassNotFoundException, IllegalAccessException, InstantiationException, InvocationTargetException {
+        ArrayList entityArrayList = getEntity(entityObjectData);
         if (entityArrayList.size() > 0) {
             commonRepository.saveList(entityArrayList);
             return new CommonResponse("Common Object Added Successfully", true, HttpStatus.OK.value(), "", new Date(), "");
@@ -64,8 +63,8 @@ public class ReferenceModelServiceImpl {
     }
 
     @Transactional
-    public CommonResponse updateEntityCategory(EntityCategoryData entityCategoryData) throws ClassNotFoundException, IllegalAccessException, InstantiationException, InvocationTargetException {
-        ArrayList entityArrayList = getEntity(entityCategoryData);
+    public CommonResponse updateEntityCategory(EntityObjectData entityObjectData) throws ClassNotFoundException, IllegalAccessException, InstantiationException, InvocationTargetException {
+        ArrayList entityArrayList = getEntity(entityObjectData);
         if (entityArrayList.size() > 0) {
             commonRepository.update(entityArrayList);
             return new CommonResponse("Common Object Updated Successfully", true, HttpStatus.OK.value(), "", new Date(), "");
@@ -75,18 +74,18 @@ public class ReferenceModelServiceImpl {
     }
 
     @Transactional
-    public CommonResponse deleteEntityCategory(EntityCategoryData entityCategoryData) throws ClassNotFoundException, IllegalAccessException, InstantiationException, InvocationTargetException {
-        ArrayList entityArrayList = getEntity(entityCategoryData);
+    public CommonResponse deleteEntityCategory(EntityObjectData entityObjectData) throws ClassNotFoundException, IllegalAccessException, InstantiationException, InvocationTargetException {
+        ArrayList entityArrayList = getEntity(entityObjectData);
         commonRepository.delete(entityArrayList);
         return new CommonResponse("Common Object Deleted Successfully", true, HttpStatus.OK.value(), "", new Date(), "");
     }
 
 
-    private ArrayList getEntity(EntityCategoryData entityCategoryData) throws ClassNotFoundException, IllegalAccessException, InstantiationException, InvocationTargetException {
+    private ArrayList getEntity(EntityObjectData entityObjectData) throws ClassNotFoundException, IllegalAccessException, InstantiationException, InvocationTargetException {
 
-        Class<?> cls = Class.forName("com.genericCrud.springgenericrestrepository.model." + entityCategoryData.getClassName());
+        Class<?> cls = Class.forName("com.genericCrud.springgenericrestrepository.model." + entityObjectData.getClassName());
 
-        ArrayList<HashMap<String, Object>> hashMapArrayList = entityCategoryData.getEntityCategoryList();
+        ArrayList<HashMap<String, Object>> hashMapArrayList = entityObjectData.getEntityObjectList();
         ArrayList clsArrayList = new ArrayList();
         Method[] methods = cls.getDeclaredMethods();
 
@@ -147,11 +146,11 @@ public class ReferenceModelServiceImpl {
 
     //if some one want to add values without considering foreign key values, this method should use instated of getEntity
     // because "getEntity" method have heavy time complexity.
-    private ArrayList getEntityBasic(EntityCategoryData entityCategoryData) throws ClassNotFoundException, IllegalAccessException, InstantiationException, InvocationTargetException {
+    private ArrayList getEntityBasic(EntityObjectData entityObjectData) throws ClassNotFoundException, IllegalAccessException, InstantiationException, InvocationTargetException {
 
-        Class<?> cls = Class.forName("com.genericCrud.springgenericrestrepository.model." + entityCategoryData.getClassName());
+        Class<?> cls = Class.forName("com.genericCrud.springgenericrestrepository.model." + entityObjectData.getClassName());
 
-        ArrayList<HashMap<String, Object>> hashMapArrayList = entityCategoryData.getEntityCategoryList();
+        ArrayList<HashMap<String, Object>> hashMapArrayList = entityObjectData.getEntityObjectList();
         ArrayList clsArrayList = new ArrayList();
         Method[] methods = cls.getDeclaredMethods();
         for (HashMap<String, Object> hashMap : hashMapArrayList) {
