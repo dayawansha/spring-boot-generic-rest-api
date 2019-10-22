@@ -34,14 +34,14 @@ Now you can use the same endpoints like theis to add the data for these two tabl
 
 common request body for All  post, put and delete requests, (This java dto will catch rest cliend request data)
 
-```
+```java
 public class EntityObjectData {
     String className;
     ArrayList<HashMap<String,Object>> entityObjectList;
 }
 ````
 Above java DTO will use in rest client like this,
-```java
+```
 {
 	"className":"Customer",
 	"entityObjectList":
