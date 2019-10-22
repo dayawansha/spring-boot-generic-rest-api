@@ -41,7 +41,7 @@ public class EntityObjectData {
 }
 ````
 Above java DTO will use in rest client like this,
-```
+```java
 {
 	"className":"Customer",
 	"entityObjectList":
