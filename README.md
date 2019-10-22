@@ -2,7 +2,7 @@
 These APIs have designed to reduce the unnecessary rest API endpoints in your poroject.
 
 when you are working with microservice architecture,
-Some times you met small tables. (someone defined as a reference table) 
+Some times you met small tables. (someone defined as a reference table..etc) 
 These tables don't have heavy relationships with other tables.
 
  However, according to the Spring-Rest-API framework for each entity (Table) you have to write multiple Rest-API endpoints (for CRUD operations).
