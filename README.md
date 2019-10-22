@@ -1,5 +1,5 @@
 # spring Generic Rest API
-These APIs have designed to reduce the unnecessary rest API endpoints.
+These APIs have designed to reduce the unnecessary rest API endpoints in your poroject.
 
 when you are working with microservice architecture,
 Some times you met small tables. (someone defined as a reference table) 
