@@ -1,4 +1,4 @@
-# spring Generic Rest API
+# spring Generic CRUD Rest API
 These APIs have designed to reduce the unnecessary rest API endpoints in your poroject.
 
 when you are working with microservice architecture,
